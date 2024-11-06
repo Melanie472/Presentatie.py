@@ -27,9 +27,9 @@ st.title("Analyse vliegtuigen")
 @st.cache_data # Zorgt ervoor dat de functie in dit geval maar 1 keer wordt uitgevoerd
 def get_data(): # Haalt alle data op
 
-    url = 'https://www.dropbox.com/scl/fi/xn5z9gscg7uft90c3jf3f/schedule_airport.gzip?rlkey=msphztdto9ngidn0oh34wqgkq&st=obphj0zl&dl=0'
+    df = 'https://www.dropbox.com/scl/fi/xn5z9gscg7uft90c3jf3f/schedule_airport.gzip?rlkey=msphztdto9ngidn0oh34wqgkq&st=obphj0zl&dl=0'
     output = 'lokaal_bestand.csv'
-    gdown.download(url, output, quiet=False)  # Leest het CSV-bestand
+    gdown.download(df, output, quiet=False)  # Leest het CSV-bestand
 
     df['STA_STD_ltc'] = pd.to_datetime(df['STA_STD_ltc'], format = '%H:%M:%S' , errors = 'coerce')
     df['ATA_ATD_ltc'] = pd.to_datetime(df['ATA_ATD_ltc'], format = '%H:%M:%S' , errors = 'coerce')
