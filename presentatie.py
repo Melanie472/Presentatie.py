@@ -32,7 +32,7 @@ def get_data(): # Haalt alle data op
     gdown.download(url, output, quiet=False)
     
     # Lees het gedownloade bestand in
-    df = pd.read_csv(output, compression='csv')
+    df = pd.read_csv(output)
 
 
     df['STA_STD_ltc'] = pd.to_datetime(df['STA_STD_ltc'], format = '%H:%M:%S' , errors = 'coerce')
