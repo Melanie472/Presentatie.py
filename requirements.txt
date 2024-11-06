@@ -9,3 +9,4 @@ numpy
 statsmodels
 geopandas
 scikit-learn
+gdown
