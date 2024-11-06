@@ -1,0 +1,7 @@
+streamlit
+openpyxl
+seaborn
+plotly
+streamlit-folium
+folium
+numpy
