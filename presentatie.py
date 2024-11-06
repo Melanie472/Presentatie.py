@@ -13,6 +13,7 @@ from vinc import v_direct
 import geopandas as gpd
 from statistics import mean
 from sklearn.linear_model import LinearRegression
+import gdown
 
 st.set_page_config(
     page_title='Vliegtuigen informatie',
@@ -26,7 +27,9 @@ st.title("Analyse vliegtuigen")
 @st.cache_data # Zorgt ervoor dat de functie in dit geval maar 1 keer wordt uitgevoerd
 def get_data(): # Haalt alle data op
 
-    df = pd.read_csv('schedule_airport.zip', sep = ",")  # Leest het CSV-bestand
+    url = 'https://drive.google.com/uc?id=JOUWBESTANDS-ID'
+    output = 'lokaal_bestand.csv'
+    gdown.download(url, output, quiet=False)  # Leest het CSV-bestand
 
     df['STA_STD_ltc'] = pd.to_datetime(df['STA_STD_ltc'], format = '%H:%M:%S' , errors = 'coerce')
     df['ATA_ATD_ltc'] = pd.to_datetime(df['ATA_ATD_ltc'], format = '%H:%M:%S' , errors = 'coerce')
