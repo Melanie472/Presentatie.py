@@ -1,0 +1,11 @@
+# pip install -r requirements.txt
+streamlit
+openpyxl
+seaborn
+plotly
+streamlit-folium
+folium
+numpy
+plotly-express
+plotly-graph-objects
+streamlit-plotly-mapbox-events
